@@ -82,9 +82,8 @@ export default function Home() {
               Read more <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
-          <div className="relative h-[500px] rounded-2xl overflow-hidden">
-            <Image src="/ourstory.jpg" alt="Our congregation" fill className="object-cover" />
-            <div className="absolute inset-0 rounded-2xl" style={{ background: 'linear-gradient(to top, rgba(74,14,14,0.4) 0%, transparent 60%)' }} />
+          <div className="relative h-[500px] rounded-2xl overflow-hidden" style={{ background: '#ffffff' }}>
+            <Image src="/ourstory.jpg" alt="Our congregation" fill className="object-contain" />
           </div>
         </div>
       </section>
