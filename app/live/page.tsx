@@ -1,10 +1,20 @@
 const YOUTUBE_CHANNEL = 'https://www.youtube.com/@witrimcanada7254'
-// To embed a specific video, replace null with the video ID string e.g. 'dQw4w9WgXcQ'
-const FEATURED_VIDEO_ID: string | null = 'n9IAHzzmbkM'
+
+const FEATURED = {
+  id: 'n9IAHzzmbkM',
+  title: 'Latest Sunday Service',
+}
+
+const PREVIOUS = [
+  { id: 'OYs3_VOMWos', title: 'Sunday Service' },
+  { id: 't2FMKs_7EvI', title: 'Sunday Service' },
+  { id: '2xYWzHv2F8A', title: 'Sunday Service' },
+]
 
 export default function LivePage() {
   return (
     <>
+      {/* Header */}
       <section className="py-24 px-6" style={{ background: '#4A0E0E' }}>
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center gap-3 mb-6">
@@ -19,42 +29,73 @@ export default function LivePage() {
       </section>
 
       <section className="py-20 px-6" style={{ background: '#FDFCFA' }}>
-        <div className="max-w-4xl mx-auto">
-          {FEATURED_VIDEO_ID ? (
-            <div className="rounded-2xl overflow-hidden shadow-sm border aspect-video" style={{ borderColor: '#E5DDD5' }}>
+        <div className="max-w-5xl mx-auto space-y-14">
+
+          {/* Featured */}
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <span className="text-xs font-bold tracking-[0.2em] uppercase px-3 py-1 rounded-full" style={{ background: '#C8912A', color: '#fff' }}>Latest</span>
+              <h2 className="text-xl font-semibold" style={{ color: '#4A0E0E', fontFamily: 'Cormorant Garamond, serif' }}>{FEATURED.title}</h2>
+            </div>
+            <div className="rounded-2xl overflow-hidden shadow-md border aspect-video" style={{ borderColor: '#E5DDD5' }}>
               <iframe
                 className="w-full h-full"
-                src={`https://www.youtube.com/embed/${FEATURED_VIDEO_ID}`}
-                title="WITRIM Video"
+                src={`https://www.youtube.com/embed/${FEATURED.id}`}
+                title={FEATURED.title}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
             </div>
-          ) : (
-            <a
-              href={YOUTUBE_CHANNEL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex flex-col items-center justify-center rounded-2xl border aspect-video transition-colors hover:border-[#C8912A] group"
-              style={{ borderColor: '#E5DDD5', background: '#fff' }}
-            >
-              <div className="w-20 h-20 rounded-full flex items-center justify-center mb-5 transition-colors group-hover:bg-red-600" style={{ background: '#e0e0e0' }}>
-                <svg className="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
-                </svg>
-              </div>
-              <p className="text-base font-semibold mb-1" style={{ color: '#4A0E0E' }}>Watch on YouTube</p>
-              <p className="text-sm" style={{ color: '#9A8070' }}>@witrimcanada7254</p>
-            </a>
-          )}
+          </div>
 
-          <p className="text-center text-sm mt-6" style={{ color: '#9A8070' }}>
-            Visit our full channel at{' '}
+          {/* Previous 3 */}
+          <div>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="h-px w-8" style={{ background: '#C8912A' }} />
+              <p className="text-xs font-semibold tracking-[0.3em] uppercase" style={{ color: '#C8912A' }}>Previous Messages</p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              {PREVIOUS.map((v, i) => (
+                <a
+                  key={v.id}
+                  href={`https://www.youtube.com/watch?v=${v.id}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group rounded-xl overflow-hidden border shadow-sm transition-shadow hover:shadow-md"
+                  style={{ borderColor: '#E5DDD5', background: '#fff' }}
+                >
+                  <div className="relative aspect-video overflow-hidden">
+                    <img
+                      src={`https://img.youtube.com/vi/${v.id}/hqdefault.jpg`}
+                      alt={v.title}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center" style={{ background: 'rgba(74,14,14,0.35)' }}>
+                      <div className="w-12 h-12 rounded-full flex items-center justify-center transition-colors group-hover:bg-[#C8912A]" style={{ background: 'rgba(200,145,42,0.85)' }}>
+                        <svg className="w-5 h-5 text-white ml-0.5" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M8 5v14l11-7z"/>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="px-4 py-3">
+                    <p className="text-xs font-semibold uppercase tracking-wider mb-0.5" style={{ color: '#C8912A' }}>Week {PREVIOUS.length - i}</p>
+                    <p className="text-sm font-medium" style={{ color: '#4A0E0E' }}>{v.title}</p>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Channel link */}
+          <p className="text-center text-sm" style={{ color: '#9A8070' }}>
+            View all sermons at{' '}
             <a href={YOUTUBE_CHANNEL} target="_blank" rel="noopener noreferrer"
               className="underline underline-offset-2 transition-colors hover:text-[#6B1A1A]" style={{ color: '#C8912A' }}>
               youtube.com/@witrimcanada7254
             </a>
           </p>
+
         </div>
       </section>
     </>
