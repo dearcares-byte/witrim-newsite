@@ -17,7 +17,7 @@ export default function Home() {
         <Image src="/apostlenpastor.jpg" alt="WITRIM congregation" fill className="object-cover" priority />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(120deg, rgba(74,14,14,0.92) 0%, rgba(28,10,10,0.6) 60%, rgba(28,10,10,0.3) 100%)' }} />
 
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pb-20 md:pb-28">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pb-40 md:pb-28">
           <div className="max-w-2xl">
             <div className="flex items-center gap-3 mb-8">
               <div className="h-px w-12" style={{ background: '#C8912A' }} />
