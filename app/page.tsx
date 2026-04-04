@@ -30,7 +30,7 @@ export default function Home() {
             <p className="text-base sm:text-lg mb-10 leading-relaxed max-w-md" style={{ color: 'rgba(255,255,255,0.65)' }}>
               Building you to become like Jesus and fulfill your destiny.
             </p>
-            <div className="flex flex-wrap gap-3">
+            <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-3">
               {[
                 { label: 'Our Story', href: '/about/our-story' },
                 { label: 'Sermons', href: '/live' },
@@ -38,10 +38,10 @@ export default function Home() {
                 { label: 'Groups', href: '/connect' },
               ].map(link => (
                 <Link key={link.href} href={link.href}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold transition-all hover:opacity-90 border"
+                  className="inline-flex items-center justify-between gap-2 px-4 py-3 rounded-lg text-sm font-semibold transition-all hover:opacity-90 border"
                   style={{ background: 'rgba(200,145,42,0.15)', borderColor: '#C8912A', color: '#C8912A' }}
                 >
-                  {link.label} <ArrowRight className="w-3.5 h-3.5" />
+                  {link.label} <ArrowRight className="w-3.5 h-3.5 shrink-0" />
                 </Link>
               ))}
             </div>
