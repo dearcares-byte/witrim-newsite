@@ -32,11 +32,14 @@ export default function Footer() {
             <ul className="flex flex-col gap-3">
               {[
                 { label: 'Home', href: '/' },
+                { label: 'Sermons', href: '/live' },
+                { label: 'Groups', href: '/connect' },
+                { label: 'Contact', href: '/contact' },
+                { label: 'About Us', href: '/about' },
                 { label: 'Our Story', href: '/about/our-story' },
                 { label: 'Leadership', href: '/about/leadership' },
-                { label: 'Connect Groups', href: '/connect' },
-                { label: 'Watch Live', href: '/live' },
-                { label: 'Contact', href: '/contact' },
+                { label: 'Staff', href: '/about/staff' },
+                { label: 'Tenets of Faith', href: '/about/tenets-of-faith' },
               ].map(l => (
                 <li key={l.href}>
                   <Link href={l.href} className="text-sm transition-colors hover:text-white" style={{ color: 'rgba(255,255,255,0.5)' }}>
