@@ -46,7 +46,7 @@ export default function Nav() {
           {[
             { label: 'Home', href: '/' },
             { label: 'Sermons', href: '/live' },
-            { label: 'Connect', href: '/connect' },
+            { label: 'Groups', href: '/connect' },
             { label: 'Contact', href: '/contact' },
           ].map(l => (
             <Link key={l.href} href={l.href}
@@ -111,7 +111,7 @@ export default function Nav() {
           {[
             { label: 'Home', href: '/' },
             { label: 'Sermons', href: '/live' },
-            { label: 'Connect', href: '/connect' },
+            { label: 'Groups', href: '/connect' },
             { label: 'Contact', href: '/contact' },
           ].map(l => (
             <Link key={l.href} href={l.href} onClick={() => setMobileOpen(false)}
