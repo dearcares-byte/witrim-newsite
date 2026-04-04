@@ -1,17 +1,27 @@
 const YOUTUBE_CHANNEL = 'https://www.youtube.com/@witrimcanada7254'
 
-const FEATURED = {
-  id: 'n9IAHzzmbkM',
-  title: 'Latest Sunday Service',
+const FEATURED_ID = 'n9IAHzzmbkM'
+const PREVIOUS_IDS = ['OYs3_VOMWos', 't2FMKs_7EvI', '2xYWzHv2F8A']
+
+async function getVideoTitle(id: string): Promise<string> {
+  try {
+    const res = await fetch(`https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${id}&format=json`, { next: { revalidate: 86400 } })
+    if (!res.ok) return 'Sunday Service'
+    const data = await res.json()
+    return data.title ?? 'Sunday Service'
+  } catch {
+    return 'Sunday Service'
+  }
 }
 
-const PREVIOUS = [
-  { id: 'OYs3_VOMWos', title: 'Sunday Service' },
-  { id: 't2FMKs_7EvI', title: 'Sunday Service' },
-  { id: '2xYWzHv2F8A', title: 'Sunday Service' },
-]
+export default async function LivePage() {
+  const [featuredTitle, ...previousTitles] = await Promise.all([
+    getVideoTitle(FEATURED_ID),
+    ...PREVIOUS_IDS.map(getVideoTitle),
+  ])
 
-export default function LivePage() {
+  const previous = PREVIOUS_IDS.map((id, i) => ({ id, title: previousTitles[i] }))
+
   return (
     <>
       {/* Header */}
@@ -35,13 +45,13 @@ export default function LivePage() {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <span className="text-xs font-bold tracking-[0.2em] uppercase px-3 py-1 rounded-full" style={{ background: '#C8912A', color: '#fff' }}>Latest</span>
-              <h2 className="text-xl font-semibold" style={{ color: '#4A0E0E', fontFamily: 'Cormorant Garamond, serif' }}>{FEATURED.title}</h2>
+              <h2 className="text-xl font-semibold" style={{ color: '#4A0E0E', fontFamily: 'Cormorant Garamond, serif' }}>{featuredTitle}</h2>
             </div>
             <div className="rounded-2xl overflow-hidden shadow-md border aspect-video" style={{ borderColor: '#E5DDD5' }}>
               <iframe
                 className="w-full h-full"
-                src={`https://www.youtube.com/embed/${FEATURED.id}`}
-                title={FEATURED.title}
+                src={`https://www.youtube.com/embed/${FEATURED_ID}`}
+                title={featuredTitle}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
@@ -55,7 +65,7 @@ export default function LivePage() {
               <p className="text-xs font-semibold tracking-[0.3em] uppercase" style={{ color: '#C8912A' }}>Previous Messages</p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-              {PREVIOUS.map((v, i) => (
+              {previous.map((v) => (
                 <a
                   key={v.id}
                   href={`https://www.youtube.com/watch?v=${v.id}`}
@@ -79,8 +89,7 @@ export default function LivePage() {
                     </div>
                   </div>
                   <div className="px-4 py-3">
-                    <p className="text-xs font-semibold uppercase tracking-wider mb-0.5" style={{ color: '#C8912A' }}>Week {PREVIOUS.length - i}</p>
-                    <p className="text-sm font-medium" style={{ color: '#4A0E0E' }}>{v.title}</p>
+                    <p className="text-sm font-medium line-clamp-2" style={{ color: '#4A0E0E' }}>{v.title}</p>
                   </div>
                 </a>
               ))}
