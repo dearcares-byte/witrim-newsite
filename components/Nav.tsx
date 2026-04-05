@@ -43,19 +43,12 @@ export default function Nav() {
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-7">
-          {[
-            { label: 'Home', href: '/' },
-            { label: 'Sermons', href: '/live' },
-            { label: 'Groups', href: '/connect' },
-            { label: 'Contact', href: '/contact' },
-          ].map(l => (
-            <Link key={l.href} href={l.href}
-              className="text-sm font-medium transition-colors hover:text-white"
-              style={{ color: 'rgba(255,255,255,0.75)' }}
-            >
-              {l.label}
-            </Link>
-          ))}
+          <Link href="/"
+            className="text-sm font-medium transition-colors hover:text-white"
+            style={{ color: 'rgba(255,255,255,0.75)' }}
+          >
+            Home
+          </Link>
 
           {/* About dropdown — click to open, closes on outside click */}
           <div className="relative" ref={dropdownRef}>
@@ -90,6 +83,19 @@ export default function Nav() {
             )}
           </div>
 
+          {[
+            { label: 'Sermons', href: '/live' },
+            { label: 'Groups', href: '/connect' },
+            { label: 'Contact', href: '/contact' },
+          ].map(l => (
+            <Link key={l.href} href={l.href}
+              className="text-sm font-medium transition-colors hover:text-white"
+              style={{ color: 'rgba(255,255,255,0.75)' }}
+            >
+              {l.label}
+            </Link>
+          ))}
+
           <a href="https://tithe.ly/give?c=6386412" target="_blank" rel="noopener noreferrer"
             className="px-5 py-2 rounded-lg text-sm font-semibold transition-opacity hover:opacity-90"
             style={{ background: '#C8912A', color: '#fff' }}
@@ -108,19 +114,12 @@ export default function Nav() {
       {/* Mobile menu */}
       {mobileOpen && (
         <div className="md:hidden border-t px-6 py-4 flex flex-col gap-0.5" style={{ borderColor: 'rgba(255,255,255,0.1)', background: '#4A0E0E' }}>
-          {[
-            { label: 'Home', href: '/' },
-            { label: 'Sermons', href: '/live' },
-            { label: 'Groups', href: '/connect' },
-            { label: 'Contact', href: '/contact' },
-          ].map(l => (
-            <Link key={l.href} href={l.href} onClick={() => setMobileOpen(false)}
-              className="py-3 text-sm font-medium border-b"
-              style={{ color: 'rgba(255,255,255,0.8)', borderColor: 'rgba(255,255,255,0.08)' }}
-            >
-              {l.label}
-            </Link>
-          ))}
+          <Link href="/" onClick={() => setMobileOpen(false)}
+            className="py-3 text-sm font-medium border-b"
+            style={{ color: 'rgba(255,255,255,0.8)', borderColor: 'rgba(255,255,255,0.08)' }}
+          >
+            Home
+          </Link>
 
           <button onClick={() => setMobileAboutOpen(v => !v)}
             className="flex items-center justify-between py-3 text-sm font-medium border-b"
@@ -147,6 +146,19 @@ export default function Nav() {
               ))}
             </div>
           )}
+
+          {[
+            { label: 'Sermons', href: '/live' },
+            { label: 'Groups', href: '/connect' },
+            { label: 'Contact', href: '/contact' },
+          ].map(l => (
+            <Link key={l.href} href={l.href} onClick={() => setMobileOpen(false)}
+              className="py-3 text-sm font-medium border-b"
+              style={{ color: 'rgba(255,255,255,0.8)', borderColor: 'rgba(255,255,255,0.08)' }}
+            >
+              {l.label}
+            </Link>
+          ))}
 
           <a href="https://tithe.ly/give?c=6386412" target="_blank" rel="noopener noreferrer"
             className="mt-3 py-3 rounded-lg text-sm font-semibold text-center"
