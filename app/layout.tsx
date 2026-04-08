@@ -4,6 +4,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://witnessofthetruth.com"),
   title: "WITRIM — Witness of the Truth International Mission",
   description: "Building you to become like Jesus and fulfill your destiny. A Bible-believing church in Montreal, QC.",
 };
