@@ -3,10 +3,10 @@ import { Users } from 'lucide-react'
 const groups = [
   { name: 'Men Group', description: 'A group where we discover what it means to be a man in the kingdom of God. We love to spend quality time together in prayer, meditating, outdoors & indoors activity.', time: 'Zoom every Monday 7PM · In person every Saturday 9AM @Church', leaders: 'Pastor Johnstone Tita & Brother Donald A.', age: 'All' },
   { name: 'Youth Group', description: 'We are the youth who want to grow deeper with Jesus and walk into our calling. The focus is to grow spiritually, form connections, establish a safe place to fellowship, and demonstrate the love of God.', time: '@Church every last Friday at 7PM', leaders: 'Adam & Kimberly Boussedra', age: '13–29' },
-  { name: 'Evangelism', description: 'Reaching out to share the love and truth of Jesus Christ with our community and beyond.', time: 'TBC', leaders: 'Deaconess Melissa Paquet', age: 'All' },
+  { name: 'Evangelism', description: 'Reaching out to share the love and truth of Jesus Christ with our community and beyond.', time: 'TBC', leaders: 'Pastor Johnstone Tita', age: 'All' },
   { name: 'Children Sunday School', description: 'A nurturing space for children to learn about Jesus and grow in faith.', time: 'Every Sunday service @Church', leaders: 'Sister Jose Moke', age: 'Children' },
   { name: 'Women Group', description: 'Women of all ages who encourage each other in our walk with Jesus. We share goals, encourage through Spirit-filled prayer, and equip through workshops and conferences.', time: 'One Saturday per month @Church', leaders: 'Pastor Faith Efon & Minister Marianne Tita', age: 'All' },
-  { name: 'Intercession', description: 'A group committed to prayer — interceding for our church, our nation, and our children. We pray for protection, against prejudices, through grief, for salvations, and over personal needs.', time: 'Every Monday at 6PM @Church', leaders: 'Prophetess Marcia Curtis', age: 'All' },
+  { name: 'Intercession', description: 'A group committed to prayer — interceding for our church, our nation, and our children. We pray for protection, against prejudices, through grief, for salvations, and over personal needs.', time: 'Every Monday at 6PM @Church', leaders: 'Pastor Kalombo Harriette', age: 'All' },
   { name: 'Business Forum', description: 'A space for believers in the marketplace to connect, grow, and apply Kingdom principles to business.', time: 'TBC', leaders: 'Pastor Joner B', age: 'All' },
 ]
 

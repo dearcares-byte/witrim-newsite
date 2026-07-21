@@ -3,9 +3,9 @@ import Image from 'next/image'
 const team = [
   { name: 'Apostle Efon Brillant', role: 'The Visionary / Senior Pastor', image: '/apostle.jpg', bio: 'He is an ordained apostle of the Church of Jesus Christ who was called into ministry in 2001 and anointed with the gift of teaching the word of God. He has been blessing people ever since, with proven testimonies from all over the world.' },
   { name: 'Pastor Johnstone Tita', role: 'Assistant Pastor', image: '/johnstone.jpg', bio: '' },
-  { name: 'Prophetess Marcia Curtis', role: 'Church Prophet', image: '/marcia.jpg', bio: '' },
+  { name: 'Pastor Kalombo Harriette', role: 'Church Prophet', image: '/placeholder-person.png', bio: '' },
   { name: 'Deaconess Nicole Gueliambe', role: 'Deaconess', image: '/nicole.jpg', bio: '' },
-  { name: 'Prophetess Melissa Paquet', role: 'Church Administrator', image: '/melissa.jpg', bio: '' },
+  { name: 'Nathalie Jean Pierre', role: 'Church Administrator', image: '/placeholder-person.png', bio: '' },
   { name: 'Minister Mary McDonough', role: 'Secretary', image: '/mary.jpg', bio: '' },
 ]
 
