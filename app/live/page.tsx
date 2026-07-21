@@ -1,7 +1,7 @@
 const YOUTUBE_CHANNEL = 'https://www.youtube.com/@witrimcanada7254'
 
-const FEATURED_ID = 'NXcoxJzdsI4'
-const PREVIOUS_IDS = ['n9IAHzzmbkM', 'OYs3_VOMWos', 't2FMKs_7EvI']
+const FEATURED_ID = 'HxFlQSCc4gY'
+const PREVIOUS_IDS = ['FccGWIXvrZQ', 'YI4xniq_wJA', 'GWFyokrptuM']
 
 async function getVideoTitle(id: string): Promise<string> {
   try {
