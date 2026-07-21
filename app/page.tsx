@@ -151,7 +151,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
           {[
             { icon: <MapPin className="w-5 h-5" />, text: '5815 Gouin W, Montreal, QC H4J 1E3' },
-            { icon: <Phone className="w-5 h-5" />, text: '514-336-1261' },
+            { icon: <Phone className="w-5 h-5" />, text: <><span className="block">Local: 514-613-0656</span><span className="block">Long distance: 1-833-230-2966</span></> },
             { icon: <Mail className="w-5 h-5" />, text: 'witrimcanada2013@gmail.com', href: 'mailto:witrimcanada2013@gmail.com' },
           ].map((item, i) => (
             <div key={i} className="flex flex-col items-center gap-3">

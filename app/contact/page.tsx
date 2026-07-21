@@ -20,7 +20,8 @@ export default function ContactPage() {
         <div className="max-w-2xl mx-auto flex flex-col gap-6">
           {[
             { icon: <MapPin className="w-4 h-4" />, label: 'Address', value: '5815 Gouin W., Montreal, QC H4J 1E3' },
-            { icon: <Phone className="w-4 h-4" />, label: 'Phone', value: '514-336-1261', href: 'tel:5143361261' },
+            { icon: <Phone className="w-4 h-4" />, label: 'Phone (Local)', value: '514-613-0656', href: 'tel:5146130656' },
+            { icon: <Phone className="w-4 h-4" />, label: 'Phone (Long distance)', value: '1-833-230-2966', href: 'tel:18332302966' },
             { icon: <Mail className="w-4 h-4" />, label: 'Email', value: 'witrimcanada2013@gmail.com', href: 'mailto:witrimcanada2013@gmail.com' },
           ].map(item => (
             <div key={item.label} className="flex items-start gap-5 p-6 rounded-xl border bg-white shadow-sm" style={{ borderColor: '#E5DDD5' }}>

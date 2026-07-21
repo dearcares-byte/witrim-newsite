@@ -58,9 +58,12 @@ export default function Footer() {
                 <MapPin className="w-4 h-4 mt-0.5 shrink-0" style={{ color: '#C8912A' }} />
                 <span className="text-sm" style={{ color: 'rgba(255,255,255,0.5)' }}>5815 Gouin W, Montreal, QC H4J 1E3</span>
               </li>
-              <li className="flex items-center gap-3">
-                <Phone className="w-4 h-4 shrink-0" style={{ color: '#C8912A' }} />
-                <span className="text-sm" style={{ color: 'rgba(255,255,255,0.5)' }}>514-336-1261</span>
+              <li className="flex items-start gap-3">
+                <Phone className="w-4 h-4 mt-0.5 shrink-0" style={{ color: '#C8912A' }} />
+                <span className="text-sm flex flex-col" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                  <span>Local: 514-613-0656</span>
+                  <span>Long distance: 1-833-230-2966</span>
+                </span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 shrink-0" style={{ color: '#C8912A' }} />
